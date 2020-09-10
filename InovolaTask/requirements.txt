@@ -1,6 +1,7 @@
-# Rest
+# Django
 django-filter==1.1.0
 djangorestframework==3.8.2
+django-model-utils
 
 # Mongo
 djongo

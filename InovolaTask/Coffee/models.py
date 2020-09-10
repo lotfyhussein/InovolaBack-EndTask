@@ -2,7 +2,6 @@ from django.db import models
 from model_utils import Choices
 from django.utils.translation import ugettext_lazy as _
 
-# Create your models here.
 
 class CoffeeMachine(models.Model):
     """
