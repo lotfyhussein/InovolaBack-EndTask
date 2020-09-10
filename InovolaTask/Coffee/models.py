@@ -1,8 +1,10 @@
 from django.db import models
+from model_utils import Choices
+from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
 
-class CoffeeMachine(models.model):
+class CoffeeMachine(models.Model):
     """
         Stores CoffeeMachines objects
     """
@@ -20,7 +22,7 @@ class CoffeeMachine(models.model):
     water_line_compatible = models.BooleanField(db_index=True)
 
 
-class CoffeePod(models.model):
+class CoffeePod(models.Model):
     """
         Stores CoffePods objects
     """
