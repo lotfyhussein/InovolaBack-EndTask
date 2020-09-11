@@ -8,17 +8,18 @@ class CoffeeMachine(models.Model):
         Stores CoffeeMachines objects
     """
     TYPES = Choices(
-        ('COFFEE_MACHINE_LARGE', _('coffee_machine_large')),
-        ('COFFEE_MACHINE_SMALL', _('coffee_machine_small')),
-        ('ESPRESSO_MACHINE', _('espresso_machine')),
-)
+        ('COFFEE_MACHINE_LARGE'),
+        ('COFFEE_MACHINE_SMALL'),
+        ('ESPRESSO_MACHINE'),
+    )
     MODELS = Choices(
-        ('BASE', _('base')),
-        ('PREMIUM', _('premium')),
-        ('DELUXE', _('deluxe')),
-)
-    product_type = models.CharField(max_length=30, choices=TYPES)
-    water_line_compatible = models.BooleanField(db_index=True)
+        ('BASE'),
+        ('PREMIUM'),
+        ('DELUXE'),
+    )
+    product_type = models.CharField(max_length=255, choices=TYPES, default=None)
+    water_line_compatible = models.BooleanField(db_index=True, default=None)
+    model = models.CharField(max_length=255, choices=MODELS, default=None)
 
 
 class CoffeePod(models.Model):
@@ -26,18 +27,18 @@ class CoffeePod(models.Model):
         Stores CoffePods objects
     """
     TYPES = Choices(
-        ('COFFEE_POD_LARGE', _('coffee_pod_large')),
-        ('COFFEE_POD_SMALL', _('coffee_pod_small')),
-        ('ESPRESSO_POD', _('espresso_pod')),
-)
+        ('COFFEE_POD_LARGE'),
+        ('COFFEE_POD_SMALL'),
+        ('ESPRESSO_POD'),
+    )
 
     FLAVORS = Choices(
-        ('COFFEE_FLAVOR_VANILLA', _('coffee_flavor_vanilla')),
-        ('COFFEE_FLAVOR_CARAMEL', _('coffee_flavor__caramel')),
-        ('COFFEE_FLAVOR_PSL', _('coffee_flavor__psl')),
-        ('COFFEE_FLAVOR_MOCHA', _('coffee_flavor__mocha')),
-        ('COFFEE_FLAVOR_HAZELNUT', _('coffee_flavor__hazelnut')),
-)
+        ('COFFEE_FLAVOR_VANILLA'),
+        ('COFFEE_FLAVOR_CARAMEL'),
+        ('COFFEE_FLAVOR_PSL'),
+        ('COFFEE_FLAVOR_MOCHA'),
+        ('COFFEE_FLAVOR_HAZELNUT'),
+    )
     product_type = models.CharField(max_length=255, choices=TYPES)
     coffee_flavor = models.CharField(max_length=255, choices=FLAVORS)
-    pack_size =  models.IntegerField(_('Size in dozen'))
+    pack_size = models.IntegerField(_('Size in dozen'))

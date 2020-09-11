@@ -1,6 +1,7 @@
 from django.contrib import admin
 from Coffee.models import CoffeeMachine, CoffeePod
 
+
 class CoffeeMachineAdmin(admin.ModelAdmin):
     """Admin View for model:`Coffee.CoffeeMachine`."""
 
@@ -9,6 +10,7 @@ class CoffeeMachineAdmin(admin.ModelAdmin):
 
 
 admin.site.register(CoffeeMachine, CoffeeMachineAdmin)
+
 
 class CoffeePodAdmin(admin.ModelAdmin):
     """Admin View for model:`Coffee.CoffeeMachine`."""
