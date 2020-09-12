@@ -5,7 +5,7 @@
 from Coffee.models import CoffeeMachine, CoffeePod
 
 #####################################################
-First we will fill coffeemachine table
+# First we will fill coffeemachine table
 
 f = open("coffeemachines.txt", "r")
 for line in f:

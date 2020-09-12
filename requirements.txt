@@ -1,0 +1,17 @@
+# Django
+django-filter
+djangorestframework
+django-model-utils
+
+# Mongo
+djongo
+
+#env
+django-environ
+
+#Documentation
+drf_yasg
+
+#Deployment
+gunicorn
+django_heroku

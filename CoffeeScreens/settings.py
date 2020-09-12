@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import environ
 import sys
+import django_heroku
 
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
@@ -32,7 +33,8 @@ SECRET_KEY = 'ase!yxl_2-p8!2s5l5o9a3)!a-o@n%9ddi@08#1&0p)r^o+&6c'
 # DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = env.bool('DJANGO_DEBUG', default=False)
+ENVIRONMENT = env.str('ENVIRONMENT', default='SANDBOX')
+DEBUG = True if ENVIRONMENT == 'SANDBOX' else False
 
 ALLOWED_HOSTS = []
 
@@ -47,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'Coffee.apps.CoffeeConfig'
+    'Coffee.apps.CoffeeConfig',
+    'drf_yasg',    
 ]
 
 MIDDLEWARE = [
@@ -131,3 +134,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+django_heroku.settings(locals())
