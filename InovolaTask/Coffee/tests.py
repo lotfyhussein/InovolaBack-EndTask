@@ -2,7 +2,6 @@ from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
 from Coffee.models import CoffeeMachine, CoffeePod
 from rest_framework import status
-from django.test.testcases import SerializeMixin
 
 User = get_user_model()
 
